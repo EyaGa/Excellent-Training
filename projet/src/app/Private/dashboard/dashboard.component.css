@@ -1,0 +1,239 @@
+
+main {
+    padding-top: 20px; /* ajuste selon la hauteur exacte de ta topnav */
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .container.sidebar-expanded {
+    margin-left: 230px; 
+  }
+  
+  .container.sidebar-collapsed {
+    margin-left: 0; 
+  }
+
+  :host ::ng-deep #layoutSidenav\_content main { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin-top: 60px;
+  
+   }
+.card{
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.mt-4{
+    box-shadow: 0 0 2px #0000001a;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+:host ::ng-deep .p-datatable thead th {
+
+    background-color: #eae9e9;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+:host ::ng-deep .p-datatable th {
+   width: auto; 
+
+}
+:host ::ng-deep .p-datatable tbody tr {
+    cursor: pointer;
+
+}
+:host ::ng-deep .p-datatable tbody  :hover {
+    cursor: pointer;
+    background-color: #f2f2f2;
+}
+
+:host ::ng-deep .p-datatable .p-cell-text {
+    font-size: 14px;
+
+}
+:host ::ng-deep .p-paginator .p-paginator-pages .p-paginator-page:not(.p-highlight):hover {
+    background: #f2f2f2;
+    border-color: transparent;
+
+}
+
+:host ::ng-deep .p-paginator .p-paginator-last,
+:host ::ng-deep .p-paginator .p-paginator-next, 
+:host ::ng-deep .p-paginator .p-paginator-first,
+:host ::ng-deep .p-paginator .p-paginator-prev,
+:host ::ng-deep .p-paginator .p-paginator-pages .p-paginator-page 
+{
+
+border-radius:4px ;
+
+}
+
+:host ::ng-deep .p-paginator .p-paginator-last:not(.p-highlight):hover,
+:host ::ng-deep .p-paginator .p-paginator-next:not(.p-highlight):hover, 
+:host ::ng-deep .p-paginator .p-paginator-first:not(.p-highlight):hover,
+:host ::ng-deep .p-paginator .p-paginator-prev:not(.p-highlight):hover{
+    background: #f2f2f2;
+    border-color: transparent;
+
+}
+
+:host ::ng-deep.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+    background: #13313e;
+    color: #fac7bf;
+
+}
+
+:host ::ng-deep .p-datatable .p-datatable-footer {
+    background-color: #eae9e9 ;
+    padding: 10px; 
+}
+
+:host ::ng-deep .p-button:focus {
+    box-shadow: none;
+  }
+
+:host ::ng-deep .p-dialog .p-dialog-footer button {
+    border-radius:4px;
+    background-color: #fac7bf;
+    border-color: #fac7bf;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-footer button:hover {
+    border-radius:4px;
+    background-color: #fabab1;
+
+}
+
+.custom-tooltip {
+    font-size: 12px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    right:-20%; 
+    transform: translateY(22%); 
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .custom-tooltip.show {
+    opacity: 1;
+  }
+
+  :host ::ng-deep .p-button-success {
+    background-color: #fac7bf !important;
+    border-color: #fac7bf !important;
+    margin-top: 10px !important;
+    margin-bottom: 2px !important;
+    margin-right: 10px !important;
+
+  }
+  
+  :host ::ng-deep .p-button-success:hover {
+    background-color: #fabab1 !important;
+    border-color: #fabab1 !important;
+  }
+  
+:host ::ng-deep .p-button-success.p-button-rounded {
+    background-color: transparent !important;
+    border: transparent !important;
+    color: #13313e !important;
+  }
+
+  :host ::ng-deep .p-button-danger {
+    background-color: transparent !important;
+    border: transparent !important;  }
+
+:host ::ng-deep .p-dialog .p-dialog-footer .p-button-text {
+        color: #ffffff !important; /* Met ici la couleur souhaitée */
+        font-weight: bold;
+}
+      
+:host ::ng-deep .p-dialog .p-dialog-footer .p-button-text:hover {
+        color: #ffffff !important;
+}
+
+:host ::ng-deep .p-inputtext:focus {
+    box-shadow: 0 0 0 2px #fac7bf !important; /* Ta couleur personnalisée */
+    border-color: #fabab1 !important; /* Tu peux aussi changer ça */
+  }
+  
+
+  td:nth-child(7), th:nth-child(7) {
+    max-width: 100px;
+    word-break: break-word;
+    white-space: normal;
+  }
+  
+  th span.p-sortable-column-icon {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 5px;
+  }
+  td:last-child {
+    display: flex;
+    align-items: center;
+  }
+  .logout-link {
+    color: #ffffff !important; 
+    font-weight: bold;
+    cursor: pointer; 
+    text-decoration: none !important;  
+ 
+   
+  }
+  .logout-link:hover{
+    color: #f2f2f2 !important; 
+    font-weight: bold;  
+    text-decoration: none !important;  
+
+  }
+  ::ng-deep .p-ripple.p-element.p-dropdown-item{
+    margin-left:-50px;
+ }
+ 
+ ::ng-deep .p-dropdown .p-dropdown-label:focus,
+ ::ng-deep .p-dropdown .p-dropdown-trigger:focus ,
+ ::ng-deep.p-dropdown.p-component.p-inputwrapper.p-inputwrapper-filled :focus{
+   border-color: none !important;
+   box-shadow: none !important;
+ }
+ 
+ ::ng-deep .p-dropdown .p-dropdown-trigger {
+   background-color: transparent !important;
+ }
+
+ ::ng-deep .custom-dropdown .p-dropdown{
+   border: 1px solid #ccc;
+   border-radius: 4px;
+ }
+
+ ::ng-deep .p-ripple.p-element.p-dropdown-item{
+    margin-left:-50px;
+ }
+ ::ng-deep .custom-dropdown .p-dropdown.p-focus {
+   box-shadow: 0 0 0 2px #fac7bf !important;
+   border-color: #fabab1 !important;
+ }
+ ::ng-deep .p-inputtext
+ {
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   cursor: pointer;  }

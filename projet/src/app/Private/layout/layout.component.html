@@ -1,0 +1,123 @@
+<div class="sb-nav-fixed" >
+  <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    <!-- Navbar Brand-->
+    <div class="logo"><a routerLink="/"><img src="/assets/images/Asset 7.png" /></a></div>
+    <!-- Sidebar Toggle-->
+    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" (click)="toggleSidebar()" [ngClass]="{active: isActive, collapsed: !expanded}" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button> 
+    <!-- Navbar Search-->
+    <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0"></form>
+    <!-- Navbar-->
+    <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4 custom-user-icon">
+      <li><a routerLink="/login" class="logout-link"><i class="fas fa-sign-out-alt"></i > Se déconnecter</a></li>
+    </ul>
+  </nav>
+
+  <div id="layoutSidenav" [ngClass]="{collapsed: !expanded}">
+    <div id="layoutSidenav_nav">
+      <div class="sb-nav-fixed" >
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+           <!-- Navbar Brand-->
+           <div class="logo"><a routerLink="/"><img src="/assets/images/Asset 7.png" /></a></div>
+           <!-- Sidebar Toggle-->
+           <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" (click)="toggleSidebar()" [ngClass]="{active: isActive, collapsed: !expanded}" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+           <i class="fas fa-bars"></i>
+           </button> 
+           <!-- Navbar Search-->
+           <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0"></form>
+           <!-- Navbar-->
+           <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4 custom-user-icon">
+            <li><a routerLink="/login" class="logout-link"><i class="fas fa-sign-out-alt"></i > Se déconnecter</a></li>
+   </ul>
+        </nav>
+        <div id="layoutSidenav" [ngClass]="{collapsed: !expanded}">
+           <div id="layoutSidenav_nav">
+              <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                 <div class="sb-sidenav-menu">
+                    <div class="nav">
+                       <!-- Admin specific links -->
+                       <div *ngIf="hasRole('administrateur')">
+                        <div class="sb-sidenav-menu-heading">Administrateur</div>
+                      
+                        <a class="nav-link" routerLink="/dashboard">
+                          <div class="sb-nav-link-icon"><i class="fas fa-user-shield fa-lg"></i></div>
+                          Utilisateurs
+                        </a>
+                        <a class="nav-link" routerLink="/statistiques">
+                          <div class="sb-nav-link-icon"><i class="fas fa-chart-bar fa-lg"></i></div>
+                          Statistiques
+                        </a>
+                      
+                        <a class="nav-link" routerLink="/domaine">
+                          <div class="sb-nav-link-icon"><i class="fas fa-th-list fa-lg"></i></div>
+                          Domaines
+                        </a>
+                      
+                        <a class="nav-link" routerLink="/structure">
+                          <div class="sb-nav-link-icon"><i class="fas fa-building fa-lg"></i></div>
+                          Structures
+                        </a>
+                      
+                        <a class="nav-link" routerLink="/profil">
+                          <div class="sb-nav-link-icon"><i class="fas fa-id-badge fa-lg"></i></div>
+                          Profils
+                        </a>
+                      
+                        <a class="nav-link" routerLink="/formations">
+                          <div class="sb-nav-link-icon"><i class="fas fa-chalkboard-teacher fa-lg"></i></div>
+                          Formations
+                        </a>
+                      
+                        <a class="nav-link" routerLink="/formateurs">
+                          <div class="sb-nav-link-icon"><i class="fas fa-user-tie fa-lg"></i></div>
+                          Formateurs
+                        </a>
+                      
+                        <a class="nav-link" routerLink="/participants">
+                          <div class="sb-nav-link-icon"><i class="fas fa-user-friends fa-lg"></i></div>
+                          Participants
+                        </a>
+                      </div>
+                      
+                      <div *ngIf="hasRole('responsable')">
+                        <div class="sb-sidenav-menu-heading">Responsable</div>
+                        <a class="nav-link" routerLink="/statistiques">
+                          <div class="sb-nav-link-icon"><i class="fas fa-chart-bar fa-lg"></i></div>
+                          Statistiques
+                        </a>
+                      </div>
+                      
+                      <div *ngIf="hasRole('utilisateur')">
+                        <div class="sb-sidenav-menu-heading">Utilisateur</div>
+                      
+                        <a class="nav-link" routerLink="/formations">
+                          <div class="sb-nav-link-icon"><i class="fas fa-chalkboard-teacher fa-lg"></i></div>
+                          Formations
+                        </a>
+                      
+                        <a class="nav-link" routerLink="/formateurs">
+                          <div class="sb-nav-link-icon"><i class="fas fa-user-tie fa-lg"></i></div>
+                          Formateurs
+                        </a>
+                      
+                        <a class="nav-link" routerLink="/participants">
+                          <div class="sb-nav-link-icon"><i class="fas fa-user-friends fa-lg"></i></div>
+                          Participants
+                        </a>
+                      </div>
+                      
+                    </div>
+                 </div>
+                 <div class="sb-sidenav-footer">
+                    <div class="small">Connecté(e) avec:</div>
+                    <span class="user-email">{{ loggedInUser?.login }} </span>
+                  </div>
+              </nav>
+           </div>
+        </div>
+     </div>
+    </div>
+  </div>
+</div>
+

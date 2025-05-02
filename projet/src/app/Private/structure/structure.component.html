@@ -1,0 +1,72 @@
+<p-toast></p-toast>
+<p-confirmDialog ></p-confirmDialog>
+<app-layout></app-layout>
+
+<div class="wrapper" [class.expanded]="expanded">
+  <div class="sb-nav-fixed">
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_content">
+           <main>
+              <div class="container"  [class.sidebar-expanded]="expanded" [class.sidebar-collapsed]="!expanded" >
+<div id="content">
+               <h1 class="mt-4">Structures</h1>
+ 
+            
+               <div class="card">
+                <div class="flex justify-content-end mb-2">
+                  <button pButton label="Nouvelle structure" icon="pi pi-plus" class="p-button-success" (click)="openNew()"></button>
+                </div>
+                <p-table 
+                  [value]="structures"
+                  [paginator]="true"
+                  [rows]="5"
+                  [scrollable]="true"
+                  dataKey="idStructure"
+                  [showCurrentPageReport]="true"
+                  currentPageReportTemplate="Affichage de {first} à {last} sur {totalRecords} structures"
+                >
+                  <ng-template pTemplate="header">
+                    <tr>
+                      <th pSortableColumn="libelleStructure">Libellé <p-sortIcon field="libelleStructure"></p-sortIcon></th>
+                      <th>Actions</th>
+                    </tr>
+                  </ng-template>
+
+                  <ng-template pTemplate="body" let-structure>
+                    <tr>
+                      <td>{{ structure.libelleStructure }}</td>
+                      <td>
+                        <button pButton icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="editStructure(structure)"></button>
+                        <button pButton pRipple icon="pi pi-trash" severity="danger" [rounded]="true" [text]="true"  (click)="deleteStructure(structure)"></button>
+                      </td>
+                    </tr>
+                  </ng-template>
+
+                  <ng-template pTemplate="summary">
+                    <div class="flex align-items-center justify-content-between">
+                      Au total : {{ structures.length }} structures
+                    </div>
+                  </ng-template>
+                </p-table>
+              </div>
+
+              <p-dialog [(visible)]="structureDialog" [modal]="true" [closable]="true" [header]="isEditMode ? 'Modifier Structure' : 'Ajouter Structure'">
+                <div class="p-fluid">
+                  <div class="p-field">
+                    <label for="libelleStructure">Libellé Structure</label>
+                    <input id="libelleStructure" type="text" pInputText [(ngModel)]="selectedStructure.libelleStructure">
+                  </div>
+
+                  <div class="p-field">
+                    <button pButton label="Enregistrer" (click)="saveStructure()"></button>
+                  </div>
+                </div>
+              </p-dialog>
+
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+</div>

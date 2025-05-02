@@ -1,0 +1,89 @@
+<p-toast></p-toast>
+<p-confirmDialog ></p-confirmDialog>
+<app-layout></app-layout>
+
+<div class="wrapper" [class.expanded]="expanded">
+  <div class="sb-nav-fixed">
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_content">
+           <main>
+              <div class="container"  [class.sidebar-expanded]="expanded" [class.sidebar-collapsed]="!expanded" >
+<div id="content">
+               <h1 class="mt-4">Formations</h1>
+ 
+               <div class="card">
+                 <div class="flex justify-content-end mb-2">
+                   <button pButton label="Nouvelle formation" icon="pi pi-plus" class="p-button-success" (click)="openNew()"></button>
+                 </div>
+              <p-table [value]="formations" [paginator]="true" [rows]="5" [scrollable]="true">
+                <ng-template pTemplate="header">
+                  <tr>
+                    <th>Titre</th>
+                    <th>Année</th>
+                    <th>Durée</th>
+                    <th>Budget</th>
+                    <th>Domaine</th>
+                    <th>Actions</th>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-f>
+                  <tr>
+                    <td>{{f.titre}}</td>
+                    <td>{{f.annee}}</td>
+                    <td>{{f.duree}}</td>
+                    <td>{{f.budget}}</td>
+                    <td>{{f.domaine.libelleDomaine}}</td>
+                    <td>
+                      <button pButton icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="editFormation(f)"></button>
+                      <button pButton pRipple icon="pi pi-trash" severity="danger" [rounded]="true" [text]="true"  (click)="deleteFormation(f)"></button>
+                    </td>
+                  </tr>
+                </ng-template>
+              </p-table>
+            </div>
+
+            <p-dialog header="Détails Formation" [(visible)]="formationDialog" [modal]="true" [style]="{width: '500px'}">
+              <div class="p-fluid">
+                <div class="p-field">
+                  <label>Titre</label>
+                  <input type="text" pInputText [(ngModel)]="formation.titre" required />
+                </div>
+                <div class="p-field">
+                  <label>Année</label>
+                  <input type="text" pInputText [(ngModel)]="formation.annee" required />
+                </div>
+                <div class="p-field">
+                  <label>Durée</label>
+                  <input type="text" pInputText [(ngModel)]="formation.duree" required />
+                </div>
+                <div class="p-field">
+                  <label>Budget</label>
+                  <input type="number" pInputText [(ngModel)]="formation.budget" required />
+                </div>
+                <div class="p-field">
+                  <label>Domaine</label>
+                  <p-dropdown 
+                    [options]="domaines" 
+                    [(ngModel)]="formation.domaine" 
+                    optionLabel="libelleDomaine" 
+                    placeholder="Sélectionnez un domaine">
+                  </p-dropdown>
+                </div>
+                
+              
+              </div>
+              <p-footer>
+                <button pButton label="Annuler" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
+                <button pButton label="Sauvegarder" icon="pi pi-check" class="p-button-text" (click)="saveFormation()"></button>
+              </p-footer>
+            </p-dialog>
+            
+          </div>
+
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+</div>
+

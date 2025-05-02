@@ -1,0 +1,48 @@
+<app-headertwo *ngIf="router.url == '/domaines'"></app-headertwo>
+<div class="coffee_section layout_padding">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="hr-lines">
+               <div class="line-container">
+                  <div class="line-left"></div>
+                  <h1 class="about_taital">Nos domaines</h1>
+                  <div class="line-right"></div>
+               </div>
+            </div>
+            <p class="services_text">Que vous souhaitiez développer vos compétences en informatique, en finance, en comptabilité,
+                en ressources humaines, en marketing ou en droit,
+                Excellent Training vous accompagne en vous proposant des formations adaptées à vos besoins professionnels.
+            </p>
+         </div>
+      </div>
+   </div>
+   <div class="coffee_section_2">
+      <div id="main_slider" class="carousel slide" data-ride="carousel">
+         <div class="carousel-inner">
+            <!-- Diviser les domaines en groupes de 4 pour chaque slide -->
+            <div *ngFor="let domaineGroup of chunkArray(domaines, 4); let i = index" class="carousel-item" [ngClass]="{'active': i === 0}">
+               <div class="container-fluid">
+                  <div class="row">
+                     <!-- Afficher les domaines dans le groupe actuel -->
+                     <ng-container *ngFor="let domaine of domaineGroup">
+                        <div class="col-lg-3 col-md-6">
+                           <div class="coffee_box" [routerLink]="['', domaine.libelleDomaine]">
+                              <h3 class="types_text">{{ domaine.libelleDomaine }}</h3>
+                           </div>
+                        </div>
+                     </ng-container>
+                  </div>
+               </div>
+            </div>
+      </div>
+      <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+      <i class="fa fa-arrow-left"></i>
+      </a>
+      <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+      <i class="fa fa-arrow-right"></i>
+      </a>
+   </div>
+</div>
+</div>
+<app-footer *ngIf="router.url == '/domaines'"></app-footer>

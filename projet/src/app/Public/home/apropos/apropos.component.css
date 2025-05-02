@@ -1,0 +1,71 @@
+/* about section start */
+@import url(../../styles_home.css);
+.about_section {
+    width: 100%;
+    float: left;
+    text-align: justify;
+}
+
+.about_taital {
+    width: 100%;
+    display: flex;
+    font-size: 30px;
+    color: #0f0f0f;
+    font-weight: bold;
+}
+
+.border_0 {
+    width: 200px;
+    background-color: #fac7bf!important;
+    height: 2px;
+    top: 20px;
+    position: relative;
+    left: 20px;
+}
+
+.about_text {
+    width: 100%;
+    font-size: 14px;
+    margin: 0px;
+    color: #0f0f0f;
+}
+
+.about_section_2 {
+    width: 100%;
+    float: left;
+    padding-top: 25px;
+}
+
+.about_text_1 {
+    width: 92%;
+    font-size: 16px;
+    margin: 0px;
+    color: #0f0f0f;
+    padding-top: 70px;
+}
+
+.readmore_bt {
+    width: 180px;
+    margin-right: 50px;
+    margin-top: 80px;
+    float: right;
+}
+
+.readmore_bt a {
+    width: 100%;
+    float: left;
+    padding: 10px 10px;
+    color: #ffffff;
+    background-color: #fac7bf;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 40px;
+}
+
+.readmore_bt a:hover {
+    color: #ffffff;
+    background-color: #13313e;
+}
+
+
+/* about section end */

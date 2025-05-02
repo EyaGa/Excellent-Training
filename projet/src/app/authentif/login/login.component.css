@@ -1,0 +1,133 @@
+/* Styles généraux pour la page de connexion */
+@import url(../styles_authentif.css);
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+/* Styles généraux pour le formulaire */
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+  }
+  .logo {
+    padding-bottom: -20px;
+    width: auto;
+    margin-left: -370px;
+    margin-top: 20px;
+    margin-bottom: -40px;
+  }
+
+/* Styles spécifiques pour le formulaire */
+form p-card {
+    width: 360px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* Ajout d'une couleur de fond */
+}
+  /* Styles pour les champs */
+  form p-card .field {
+    margin-bottom: 20px;
+  }
+  
+  /* Styles pour les labels */
+  form p-card .field label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333333; /* Couleur de texte plus foncée */
+  }
+  
+  /* Styles pour les champs de saisie */
+  form p-card .field input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dddddd; /* Bordure plus claire */
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  /* Styles pour les messages d'erreur */
+  form p-card .field .block {
+    margin-top: 5px;
+  }
+  
+  form p-card .field .block div {
+    color: red;
+  }
+  
+  /* Styles pour le bouton */
+
+
+   form p-card p-button{
+    width: 100%;
+    margin-top: 20px;
+    border: none; /* Suppression de la bordure */
+    color: #ffffff; /* Couleur du texte du bouton */
+    font-size: 16px;
+    cursor: pointer;
+
+  }
+  form p-card p-button:hover {
+    background-color: #060707;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+
+  /* Styles pour le lien "Not a member?" */
+  form p-card .mt-2 {
+    margin-top: 15px;
+    text-align: center;
+  }
+  
+  form p-card .mt-2 a {
+    color: #007bff; /* Couleur du lien */
+    text-decoration: none;
+  }
+  
+  form p-card .mt-2 a:hover {
+    text-decoration: underline;
+  }
+
+  :host ::ng-deep .p-button:focus {
+    box-shadow: none;
+    border: none;
+  }
+  :host ::ng-deep .p-dialog .p-dialog-footer button {
+    border-radius:4px;
+    background-color: #f5a738;
+    border-color: #f5a738;
+    justify-content: space-between;
+    margin-left: 10px;
+  }
+  
+  :host ::ng-deep .p-dialog .p-dialog-footer button:hover {
+    border-radius:4px;
+    background-color: #f09515;
+  
+  }
+  
+  .column {
+    flex: 1;
+  }
+  .password-container {
+    position: relative;
+  }
+  
+  .password-container input {
+    width: calc(100% - 40px);
+    padding-right: 40px;
+  }
+  
+  .password-container .pi {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  } 
+ 
+  

@@ -1,0 +1,57 @@
+<div class="logo"><a routerLink="/" ><img src="assets/images/Asset 3.png" ></a></div>
+<link rel="stylesheet" type="text/css" href="login.component.css">
+<div class="login-container"> 
+<form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <p-card header="Se connecter" [style]="{ width: '360px' }">
+      <div class="field">
+        <label for="login">Login</label>
+        <input
+          type="text"
+          pInputText
+          formControlName="login"
+          class="w-full"
+          name="login"
+          placeholder="Insérez votre login"
+        />
+        <small
+          *ngIf="loginForm.get('login')?.invalid && (loginForm.get('login')?.dirty || loginForm.get('login')?.touched)"
+          class="block p-error"
+        >
+          <div *ngIf="loginForm.get('login')?.errors?.['required']">Login obligatoire.</div>
+          <div *ngIf="loginForm.get('login')?.errors?.['login']">Login doit être valide</div>
+        </small>
+      </div>
+      <div class="field">
+        <label for="mdp">Mot de passe</label>
+        <div class="password-container">
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            pInputText
+            formControlName="mdp"
+            class="w-full"
+            name="mdp"
+            placeholder="Insérez votre mot de passe"
+          />
+          <i
+          class="pi"
+          [ngClass]="showPassword ? 'pi-eye' : 'pi-eye-slash'" 
+          (click)="togglePasswordVisibility()"
+          ></i>
+        </div>
+        <small
+          *ngIf="loginForm.get('mdp')?.invalid && (loginForm.get('mdp')?.dirty || loginForm.get('mdp')?.touched)"
+          class="block p-error"
+        >
+          <div *ngIf="loginForm.get('mdp')?.errors?.['required']">Mot de passe obligatoire.</div>
+        </small>
+      </div>
+      <p-button
+        label="SE CONNECTER"
+        styleClass="w-full"
+        [disabled]="loginForm.invalid"
+        type="submit"
+      ></p-button>
+      <div class="mt-2">Pas encore inscrit(e)? <a routerLink="/register">Inscrivez-vous</a></div>
+    </p-card>
+  </form>
+</div>

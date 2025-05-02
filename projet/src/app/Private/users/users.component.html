@@ -1,0 +1,83 @@
+<!--
+<p-toast></p-toast>
+<p-confirmDialog></p-confirmDialog>
+<app-layout></app-layout>
+
+<div class="wrapper" [class.expanded]="expanded">
+  <div class="sb-nav-fixed">
+    <div id="layoutSidenav">
+      <div id="layoutSidenav_content">
+        <main>
+          <div class="container"
+               [class.sidebar-expanded]="expanded"
+               [class.sidebar-collapsed]="!expanded">
+
+            <h1 class="mt-4">Gestion des Utilisateurs</h1>
+            <button pButton
+                    label="Nouvel utilisateur"
+                    icon="pi pi-plus"
+                    class="p-button-success mb-2"
+                    (click)="openNew()">
+            </button>
+
+            <div class="card">
+              <p-table [value]="users"
+                       [paginator]="true" [rows]="5"
+                       [scrollable]="true"
+                       dataKey="idUser"
+                       currentPageReportTemplate="Affichage de {first} à {last} sur {totalRecords} utilisateurs"
+                       [showCurrentPageReport]="true">
+                <ng-template pTemplate="header">
+                  <tr>
+                    <th pSortableColumn="login">Login <p-sortIcon field="login"></p-sortIcon></th>
+                    <th>Actions</th>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-user>
+                  <tr>
+                    <td>{{ user.login }}</td>
+                    <td>
+                      <button pButton icon="pi pi-pencil"
+                              class="p-button-text p-button-rounded p-button-warning mr-2"
+                              (click)="edit(user)"></button>
+                      <button pButton icon="pi pi-trash"
+                              class="p-button-text p-button-rounded p-button-danger"
+                              (click)="delete(user)"></button>
+                    </td>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="summary">
+                  <div class="flex align-items-center justify-content-between">
+                    Total : {{ users.length }} utilisateurs
+                  </div>
+                </ng-template>
+              </p-table>
+            </div>
+
+            <p-dialog header="Utilisateur" [(visible)]="dialog" [modal]="true" [style]="{width:'400px'}">
+              <div class="p-fluid">
+                <div class="p-field">
+                  <label>Login</label>
+                  <input type="text" pInputText [(ngModel)]="current.login" required/>
+                </div>
+                <div class="p-field">
+                  <label>Mot de passe</label>
+                  <input type="password" pInputText [(ngModel)]="current.mdp"
+                         [required]="!current.idUser"/>
+                </div>
+              </div>
+              <p-footer>
+                <button pButton label="Annuler" icon="pi pi-times" class="p-button-text"
+                        (click)="hideDialog()"></button>
+                <button pButton label="Sauvegarder" icon="pi pi-check" class="p-button-text"
+                        (click)="save()"></button>
+              </p-footer>
+            </p-dialog>
+
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+</div>
+-->

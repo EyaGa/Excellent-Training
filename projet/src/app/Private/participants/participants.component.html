@@ -1,0 +1,118 @@
+<p-toast></p-toast>
+<p-confirmDialog ></p-confirmDialog>
+<app-layout></app-layout>
+
+<div class="wrapper" [class.expanded]="expanded">
+  <div class="sb-nav-fixed">
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_content">
+           <main>
+              <div class="container"  [class.sidebar-expanded]="expanded" [class.sidebar-collapsed]="!expanded" >
+<div id="content">
+               <h1 class="mt-4">Participants</h1>
+ 
+               <div class="card">
+                 <div class="flex justify-content-end mb-2">
+                   <button pButton label="Nouveau participant" icon="pi pi-plus" class="p-button-success" (click)="openNew()"></button>
+                 </div>
+              <p-table [value]="participants"
+                       [paginator]="true"
+                       [rows]="5"
+                       [scrollable]="true"
+                       dataKey="idParticipant">
+                <ng-template pTemplate="header">
+                  <tr>
+                    <th pSortableColumn="nomParticipant">Nom <p-sortIcon field="nomParticipant"></p-sortIcon></th>
+                    <th pSortableColumn="prenomParticipant">Prénom <p-sortIcon field="prenomParticipant"></p-sortIcon></th>
+                    <th>Email</th>
+                    <th>Téléphone</th>
+                    <th>Structure</th>
+                    <th>Profil</th>
+                    <th>Formations</th>
+                    <th>Actions</th>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-pt>
+                  <tr>
+                    <td>{{ pt.nomParticipant }}</td>
+                    <td>{{ pt.prenomParticipant }}</td>
+                    <td>{{ pt.emailParticipant }}</td>
+                    <td>{{ pt.telParticipant }}</td>
+                    <td>{{ pt.structure.libelleStructure }}</td>
+                    <td>{{ pt.profil.libelleProfil }}</td>
+                    <td text="small">{{ getTitresFormations(pt) }}</td>
+                    <td>
+                        <button pButton icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="editParticipant(pt)"></button>
+                        <button pButton pRipple icon="pi pi-trash" severity="danger" [rounded]="true" [text]="true"  (click)="deleteParticipant(pt)"></button>
+                      </td>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="summary">
+                  <div class="flex align-items-center justify-content-between">
+                    Au total : {{ participants.length }} participants
+                  </div>
+                </ng-template>
+              </p-table>
+            </div>
+            <p-dialog header="Détails Participant"
+            [(visible)]="participantDialog"
+            [modal]="true"
+            [style]="{width:'700px'}">
+    <div class="p-fluid">
+      <div class="p-field">
+        <label>Nom</label>
+        <input type="text" pInputText [(ngModel)]="participant.nomParticipant" required />
+      </div>
+      <div class="p-field">
+        <label>Prénom</label>
+        <input type="text" pInputText [(ngModel)]="participant.prenomParticipant" required />
+      </div>
+      <div class="p-field">
+        <label>Email</label>
+        <input type="email" pInputText [(ngModel)]="participant.emailParticipant" required />
+      </div>
+      <div class="p-field">
+        <label>Téléphone</label>
+        <input type="number" pInputText [(ngModel)]="participant.telParticipant" required />
+      </div>
+      <div class="p-field">
+        <label>Structure</label>
+        <p-dropdown class="custom-dropdown"
+        [options]="structures" [(ngModel)]="participant.structure" optionLabel="libelleStructure" placeholder="Sélectionnez la structure"></p-dropdown>
+      </div>
+      <div class="p-field">
+        <label>Profil</label>
+        <p-dropdown       class="custom-dropdown"
+        [options]="profils" [(ngModel)]="participant.profil" optionLabel="libelleProfil" placeholder="Sélectionnez le profil"></p-dropdown>
+      </div>
+
+    <div class="p-field">
+      <label>Formations</label>
+      <p-multiSelect 
+      class="custom-multiselect"
+
+  [options]="formations" 
+  [(ngModel)]="participant.formations"
+  optionLabel="titre"
+  placeholder="Sélectionnez les formations"
+  display="chip">
+</p-multiSelect>
+</div>
+    </div>
+    
+    
+              <p-footer>
+                <button pButton label="Annuler" icon="pi pi-times" class="p-button-text"
+                        (click)="hideDialog()"></button>
+                <button pButton label="Sauvegarder" icon="pi pi-check" class="p-button-text"
+                        (click)="saveParticipant()"></button>
+              </p-footer>
+            </p-dialog>
+          </div>
+
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+</div>

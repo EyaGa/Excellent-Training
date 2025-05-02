@@ -1,0 +1,30 @@
+@import url(../dashboard/dashboard.component.css);
+
+::ng-deep .p-dropdown .p-dropdown-label:focus,
+::ng-deep .p-dropdown .p-dropdown-trigger:focus ,
+::ng-deep.p-dropdown.p-component.p-inputwrapper.p-inputwrapper-filled :focus{
+  border-color: none !important;
+  box-shadow: none !important;
+}
+
+::ng-deep .p-dropdown .p-dropdown-trigger {
+  background-color: transparent !important;
+}
+
+::ng-deep .custom-dropdown .p-dropdown{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+::ng-deep .p-ripple.p-element.p-dropdown-item{
+   margin-left:-50px;
+}
+::ng-deep .custom-dropdown .p-dropdown.p-focus {
+  box-shadow: 0 0 0 2px #fac7bf !important;
+  border-color: #fabab1 !important;
+}
+::ng-deep .p-inputtext
+{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;  }

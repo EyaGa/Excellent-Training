@@ -1,0 +1,123 @@
+/* banner section start */
+@import url(../../styles_home.css);
+.banner_section {
+    width: 100%;
+    float: left;
+    padding: 20px 0px 70px 0px;/* padding: 90px 0px 90px 0px; */
+
+}
+
+.banner_bg{
+    width: 100%;
+    background: #ddebf8;
+    
+   
+}
+.banner_section::after {
+    content: '';
+    position: absolute;
+    width: 640px;
+    height: 100%;
+    left: 0px;
+    right: initial;
+    background-color: #c1bdbecc;
+    background-size: 100%;
+    top: 0px;
+    z-index: -1; 
+    background-color: transparent !important;
+    padding: 20px 0px;
+}
+
+
+.logo {
+    width: auto;
+}
+
+.banner_taital_main {
+    width: 43%;
+    float: left;
+}
+
+.banner_taital {
+    width: 100%;
+    float: left;
+    font-size: 54px;
+    color: #060707;
+    font-weight: bold;
+    padding-bottom: 0px;
+    line-height: 70px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.banner_text {
+    width: 80%;
+    float: left;
+    font-size: 16px;
+    color: #060707;
+    padding-top: 30px;
+    margin: 0px;
+    text-align: justify;
+
+}
+
+.btn_main {
+    width: 100%;
+    display: flex;
+}
+
+.started_text {
+    width: 180px;
+    margin-right: 20px;
+    margin-top: 30px;
+}
+
+.started_text a {
+    width: 100%;
+    float: left;
+    padding: 10px 10px;
+    color: #ffffff;
+    background-color: #fac7bf;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 40px;
+}
+
+.started_text a:hover {
+    color: #ffffff;
+    background-color: #13313e;
+}
+
+
+#my_slider a.carousel-control-prev {
+    left: initial;
+    top: 110px;
+    right: 30px;
+}
+
+#my_slider a.carousel-control-next {
+    right: 30px;
+    top: 170px;
+    color: #ffffff;
+    background-color: #060707;
+}
+
+#my_slider .carousel-control-next,
+#my_slider .carousel-control-prev {
+    width: 55px;
+    height: 55px;
+    background: #fac7bf;
+    opacity: 1;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+#my_slider .carousel-control-next:focus,
+#my_slider .carousel-control-next:hover,
+#my_slider .carousel-control-prev:focus,
+#my_slider .carousel-control-prev:hover {
+    color: #ffffff;
+    background-color: #13313e;
+}
+
+
+/* banner section end */

@@ -1,0 +1,269 @@
+/* Styles généraux pour le formulaire */
+@import url(../styles_authentif.css);
+form {
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-bottom: 80px;
+  }
+  
+.logo {
+  width: auto;
+  margin-left: -150px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+  .field-container {
+    display: flex;
+    flex-wrap: wrap; /* Wrap fields to the next line if needed */
+    justify-content: space-between; /* Distribute fields evenly with space between */
+  }
+  
+  .field {
+    width: 50%; /* Adjust width as needed for two fields per line */
+    margin-bottom: 20px;
+    padding-right: 20px; /* Add padding-right for space between fields */
+    display: inline-block;
+  /* flex: 1 1 50%;*/
+  }
+
+  .fieldemail-field {
+    width: 100%;
+  }
+
+  .custom-file-upload {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  .custom-file-upload input[type='file'] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+  }
+  
+  .custom-file-upload-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* Styles spécifiques pour la carte */
+  form p-card {
+    max-width: 800px;
+    min-width: 800px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+ 
+  /* Styles pour les champs */
+  form p-card .field {
+    margin-bottom: 20px;
+  }
+ /* Styles pour les groupes de radio */
+.field.radio {
+  display: flex; /* Utilise Flexbox pour aligner les éléments horizontalement */
+  flex-direction: row; /* Alignement horizontal des options de radio */
+  justify-content: center; /* Centre les options de radio horizontalement */
+  align-items: center; /* Alignement vertical des options de radio */
+  width: 100%; /* Assure que le groupe de radio prend toute la largeur disponible */
+  flex-wrap: wrap; /* Permet aux éléments de se replier sur plusieurs lignes si nécessaire */
+  padding-top:6px ;
+}
+
+.field.radio .radio-option {
+  display: flex; /* Utilise Flexbox pour aligner le bouton radio et le label horizontalement */
+  align-items: center; /* Assure que le bouton radio et le label sont centrés verticalement */
+  justify-content: center; /* Centre le bouton radio et le label horizontalement dans leur conteneur */
+  width: 30%; /* Assure que chaque option de radio prend toute la largeur disponible de son conteneur parent */
+}
+
+/* Styles pour les boutons radio */
+.field.radio .radio-option .radio-button {
+  width: auto; /* Largeur automatique pour les options de radio */
+  margin-right: 5px; /* Marge à droite pour espacer le bouton radio et le label */
+}
+
+/* Styles pour les labels des options de radio */
+.field.radio .radio-option .radio-label {
+  font-weight: normal !important;
+  align-self: center; /* Assure que le label est centré verticalement par rapport au bouton radio */
+}
+  /* Styles pour les labels */
+  form p-card .field label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333333; /* Couleur de texte plus foncée */
+  }
+  
+  /* Styles pour les champs de saisie */
+  form p-card .field input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dddddd; /* Bordure plus claire */
+    border-radius: 4px;
+    font-size: 16px;
+    
+  }
+  .field .input[name= 'email'] && [type= 'text']  {
+    width: 100%; /* Assurez-vous que le champ email prend toute la largeur disponible */
+   }
+  form p-card .field option {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dddddd; /* Bordure plus claire */
+    border-radius: 4px;
+    font-size: 16px;
+    color:#000000;
+  
+  }
+  form p-card .field select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dddddd; /* Bordure plus claire */
+    border-radius: 4px;
+    font-size: 16px;
+    color:#6b7280;
+  }
+  /* Styles pour les messages d'erreur */
+  form p-card .field .block {
+    margin-top: 5px;
+  }
+  
+  form p-card .field .block div {
+    color: red;
+  }
+  
+  /* Styles pour le bouton */
+  form p-card  p-button {
+    width: 100%;
+    margin-top: 20px;
+    border: none; /* Suppression de la bordure */
+    color: #ffffff ; /* Couleur du texte du bouton */
+    font-size: 16px;
+    cursor: pointer;
+ 
+
+  }
+  .my-custom-button-two {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 95%;
+  height: 50px;
+    margin-top: 0;
+    border: none;
+    color: #ffffff;
+    background: #fac7bf;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .my-custom-button-two:hover {
+    background: #fabbb1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .hr-lines {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 26px;
+  }
+  
+  .hr-lines span {
+    display: block;
+    margin-bottom: 26px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+ 
+  }
+    
+  .hr-lines .span-two {
+ 
+       margin-top: -30px;
+       font-size: 16px;
+       margin-bottom: 36px;
+  
+  }
+  
+  .line-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .line-left,
+  .line-right {
+    height: 2px;
+    width: 326px;
+    background: #fabab1;
+    margin: 0 10px;
+  }
+  
+  .line-left {
+    margin-right: 10px;
+    margin-top: -20px;
+  }
+  
+  .line-right {
+    margin-left: 10px;
+    margin-top: -20px;
+  }
+  form p-card  p-button:hover {
+  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+  /* Styles pour le lien "Already a member?" */
+  form p-card .mt-2 {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  form p-card .mt-2 a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  form p-card .mt-2 a:hover {
+    text-decoration: underline;
+  }
+  .password-container {
+    position: relative;
+  }
+  
+  .password-container input {
+    width: calc(100% - 40px);
+    padding-right: 40px;
+  }
+  
+  .password-container .pi {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  } 

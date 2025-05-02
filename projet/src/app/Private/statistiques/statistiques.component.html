@@ -1,0 +1,67 @@
+<app-layout></app-layout>
+  
+ <!-- Code for Responsables and Utilisateurs can be added in their specific areas if necessary -->
+ <div class="wrapper" [class.expanded]="expanded">
+    <div class="sb-nav-fixed">
+      <div id="layoutSidenav">
+          <div id="layoutSidenav_content">
+             <main>
+                <div class="container"  [class.sidebar-expanded]="expanded" [class.sidebar-collapsed]="!expanded" >
+                    <div id="content">
+                   <h1 class="mt-4">Statistiques</h1>
+                      <div class="chart-row">
+                         <div class="chart">
+                            <h3 class="chart-title">Formateurs par type</h3>
+                            <ngx-charts-pie-chart
+                            [results]="formateursParType"
+                            [legend]="showLegend"
+                            [labels]="showLabels">
+                            </ngx-charts-pie-chart>
+                         </div>
+                         <div class="chart">
+                            <h3 class="chart-title">Participants par structure</h3>
+                            <ngx-charts-bar-vertical
+                            [results]="participantsParStructure"
+                            [legend]="showLegend"
+                            [xAxis]="true"
+                            [yAxis]="true">
+                            </ngx-charts-bar-vertical>
+                         </div>
+                      </div>
+                      <!-- Deuxième ligne de graphiques (2 par 2) -->
+                      <div class="chart-row">
+                         <div class="chart">
+                            <h3 class="chart-title">Participants par profil</h3>
+                            <ngx-charts-pie-chart
+                            [results]="participantsProfilChartData"
+                            [legend]="showLegend"
+                            [labels]="showLabels"
+                            [doughnut]="false">
+                            </ngx-charts-pie-chart>
+                         </div>
+                         <div class="chart">
+                            <h3 class="chart-title">Formations par domaine</h3>
+                            <ngx-charts-advanced-pie-chart
+                               [results]="formationsParDomaine">
+                            </ngx-charts-advanced-pie-chart>
+                         </div>
+                      </div>
+                      <!-- Troisième ligne de graphiques (1 seul) -->
+                      <div class="chart-row">
+                         <div class="chart">
+                            <h3 class="chart-title">Formations par année</h3>
+                            <ngx-charts-line-chart
+                            [results]="formationsParAnneeArea"
+                            [xAxis]="true"
+                            [yAxis]="true"
+                            [legend]="showLegend"
+                            >
+                            </ngx-charts-line-chart>
+                         </div>
+                      </div>
+                </div>
+          </div>
+          </main>
+       </div>
+    </div>
+ </div>

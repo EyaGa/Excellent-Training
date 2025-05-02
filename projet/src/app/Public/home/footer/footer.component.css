@@ -1,0 +1,154 @@
+/* footer section start */
+@import url(../../styles_home.css);
+.footer_section{
+    width: 100%;
+    float: left;
+    background-color: #1d1d1d;
+    height: auto;
+    padding: 20px 0px;
+    text-align: justify;
+    
+}
+
+.location_main{
+    width: 100%;
+    display: flex;
+}
+
+.location_text {
+    width: 100%;
+}
+
+.location_text a{
+    float: left;
+    font-size: 16px;
+    color: #fefefd;
+    padding: 10px 20px;
+    border: 1px solid #fac7bf;
+    width: 250px;
+    margin-right: 110px;
+    text-align: center;
+}
+.location_text a:hover {
+    color: #fefefd;
+    background-color: #fac7bf;
+}
+
+.padding_15 {
+    padding-right: 15px;
+}
+
+.footer_section_2 {
+    width: 100%;
+    float: left;
+    margin-top: 40px;
+    margin-left: 40px;  
+}
+
+.footer_text{
+    width: 100%;
+    float: left;
+    font-size: 30px;
+    color: #ffffff; 
+    padding: 0px;  
+    margin-left: 20px;
+    text-align: justify;   
+}
+
+.lorem_text{
+    width: 80%;
+    float: left; 
+    font-size: 16px;
+    color: #bbbbbb;
+    margin-left: 20px;     
+}
+
+.social_icon {
+    width: 100%;
+    float: left;
+    margin-left: 20px;   
+}
+
+.social_icon ul {
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+}
+
+.social_icon li {
+    float: left;
+}
+
+.social_icon li a {
+    float: left;
+    padding: 5px 10px;
+    color: #ffffff;
+    font-size: 22px;
+    width: auto;
+    margin-top: 10px;
+}
+
+.social_icon li a:hover {
+    color: #fac7bf;
+}
+
+
+.subscribe_bt {
+    width: 140px;
+    float: left;
+    margin-left: 20px;   
+}
+
+.subscribe_bt a {
+    width: 100%;
+    float: left;
+    color: #fac7bf;
+    font-size: 17px;
+    padding: 10px 0px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.subscribe_bt a:hover {
+    color: #ffffff;
+}
+
+/* footer section end */
+
+
+/* copyright section start */
+
+.copyright_section {
+    width: 100%;
+    float: left;
+    background-color: #1d1d1d;
+    height: auto;
+    cursor: pointer; 
+
+}
+
+.copyright_text {
+    width: 100%;
+    float: left;
+    font-size: 16px;
+    margin: 15px 0px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.copyright_text a {
+    color: #ffffff;
+}
+
+.copyright_text a:hover {
+   color: #fac7bf;
+  
+}
+
+
+/* copyright section end */
+
+.margin_top90 {
+    margin-top: 90px;
+}

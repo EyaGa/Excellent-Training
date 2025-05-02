@@ -1,0 +1,97 @@
+<p-toast></p-toast>
+<p-confirmDialog ></p-confirmDialog>
+<app-layout></app-layout>
+
+<div class="wrapper" [class.expanded]="expanded">
+  <div class="sb-nav-fixed">
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_content">
+           <main>
+              <div class="container"  [class.sidebar-expanded]="expanded" [class.sidebar-collapsed]="!expanded" >
+<div id="content">
+               <h1 class="mt-4">Formateurs</h1>
+ 
+               <div class="card">
+                 <div class="flex justify-content-end mb-2">
+                   <button pButton label="Nouveau Formateur" icon="pi pi-plus" class="p-button-success" (click)="openNew()"></button>
+                 </div>
+ 
+                 <p-table [value]="formateurs" [paginator]="true" [rows]="5" [scrollable]="true" [style]="{width: '100%'}">
+                   <ng-template pTemplate="header">
+                     <tr>
+                       <th pSortableColumn="nomFormateur">Nom <p-sortIcon field="nomFormateur"></p-sortIcon></th>
+                       <th pSortableColumn="prenomFormateur">Prénom <p-sortIcon field="prenomFormateur"></p-sortIcon></th>
+                       <th>Email</th>
+                       <th>Téléphone</th>
+                       <th pSortableColumn="typeFormateur">Type<p-sortIcon field="typeFormateur"></p-sortIcon></th>
+                       <th>Employeur</th>
+                       <th>Actions</th>
+                     </tr>
+                   </ng-template>
+ 
+                   <ng-template pTemplate="body" let-formateur>
+                     <tr>
+                       <td>{{ formateur.nomFormateur }}</td>
+                       <td>{{ formateur.prenomFormateur }}</td>
+                       <td>{{ formateur.emailFormateur }}</td>
+                       <td>{{ formateur.telFormateur }}</td>
+                       <td>{{ formateur.typeFormateur }}</td>
+                       <td>{{ formateur.employeur?.nomEmployeur }}</td>
+                       <td>
+                         <button pButton icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="editFormateur(formateur)"></button>
+                         <button pButton pRipple icon="pi pi-trash" severity="danger" [rounded]="true" [text]="true"  (click)="deleteFormateur(formateur)"></button>
+                       </td>
+                     </tr>
+                   </ng-template>
+                 </p-table>
+               </div>
+ 
+               <p-dialog header="Détails Formateur" [(visible)]="formateurDialog" [modal]="true" [style]="{width: '450px'}">
+                 <div class="p-fluid">
+                   <div class="field">
+                     <label>Nom</label>
+                     <input type="text" pInputText [(ngModel)]="formateur.nomFormateur" required/>
+                   </div>
+                   <div class="field">
+                     <label>Prénom</label>
+                     <input type="text" pInputText [(ngModel)]="formateur.prenomFormateur" required/>
+                   </div>
+                   <div class="field">
+                     <label>Email</label>
+                     <input type="email" pInputText [(ngModel)]="formateur.emailFormateur" required/>
+                   </div>
+                   <div class="field">
+                     <label>Téléphone</label>
+                     <input type="number" pInputText [(ngModel)]="formateur.telFormateur" required/>
+                   </div>
+                   <div class="field">
+                     <label>Type</label>
+                     <input type="text" pInputText [(ngModel)]="formateur.typeFormateur" required/>
+                   </div>
+                   <div class="field">
+                    <label>Nom Employeur</label>
+                    <p-dropdown 
+                      [options]="employeurs"
+                      [(ngModel)]="formateur.employeur"
+                      optionLabel="nomEmployeur"
+                      placeholder="Sélectionner un employeur"
+                      required
+                    ></p-dropdown>
+                  </div>
+                  
+                 </div>
+                 <p-footer>
+                   <button pButton label="Annuler" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
+                   <button pButton label="Sauvegarder" icon="pi pi-check" class="p-button-text" (click)="saveFormateur()"></button>
+                 </p-footer>
+               </p-dialog>
+ 
+ 
+             </div>
+           </div>
+         </main>
+       </div>
+     </div>
+   </div>
+ </div>
+ 

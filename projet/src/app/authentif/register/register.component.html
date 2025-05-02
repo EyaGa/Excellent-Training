@@ -1,0 +1,73 @@
+<div class="logo">
+  <a routerLink="/" >
+    <img src="assets/images/Asset 3.png" />
+  </a>
+</div>
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <p-card header="S'inscrire en tant que {{ role }}">
+    <button type="button" class="my-custom-button-two" (click)="toggleResponsable()" *ngIf="!isResponsable">
+      EN TANT QUE RESPONSABLE
+    </button>
+  
+    <button type="button" class="my-custom-button-two" (click)="toggleUtilisateur()" *ngIf="!isUtilisateur">
+      EN TANT QUE UTILISATEUR
+    </button>
+
+    <div class="hr-lines">
+      <div class="line-container" *ngIf="!isResponsable || !isUtilisateur">
+        <div class="line-left"></div>
+        <span class="span-one">OU</span>
+        <div class="line-right"></div>
+      </div>
+      <span class="span-two" *ngIf="!isResponsable || !isUtilisateur">
+        Veuillez saisir vos informations ci-dessous
+      </span>
+    </div>
+
+    <div class="field-container">
+      <div class="field">
+        <label for="login">Login</label>
+        <input id="login" type="email" formControlName="login" placeholder="Votre login" class="w-full" />
+      </div>
+
+      <div class="field">
+        <label for="mdp">Mot de passe</label>
+        <input
+          id="mdp"
+          [type]="showPassword ? 'text' : 'password'"
+          formControlName="mdp"
+          placeholder="Votre mot de passe"
+          class="w-full"
+        />
+        <i
+          class="pi"
+          [ngClass]="showPassword ? 'pi-eye' : 'pi-eye-slash'"
+          (click)="togglePasswordVisibility()"
+        ></i>
+      </div>
+
+      <div class="field">
+        <label for="confirmPassword">Confirmer le mot de passe</label>
+        <input
+          id="confirmPassword"
+          [type]="showPassword ? 'text' : 'password'"
+          formControlName="confirmPassword"
+          placeholder="Confirmez votre mot de passe"
+          class="w-full"
+        />
+        <i
+        class="pi"
+        [ngClass]="showPassword ? 'pi-eye' : 'pi-eye-slash'"
+        (click)="togglePasswordVisibility()"
+      ></i>
+      </div>
+    </div>
+
+    <p-button label="S'INSCRIRE" styleClass="w-full" [disabled]="registerForm.invalid" type="submit" class="my-custom-button"></p-button>
+
+    <div class="mt-2">
+      Déjà inscrit(e)? <a routerLink="/login">Se connecter</a>
+    </div>
+  </p-card>
+</form>

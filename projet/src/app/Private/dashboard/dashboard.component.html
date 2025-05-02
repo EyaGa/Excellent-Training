@@ -1,0 +1,81 @@
+<app-layout></app-layout>
+<div class="wrapper" [class.expanded]="expanded">
+  <div class="sb-nav-fixed">
+    <div id="layoutSidenav">
+      <div id="layoutSidenav_content">
+        <main>
+          <div class="container" [class.sidebar-expanded]="expanded" [class.sidebar-collapsed]="!expanded">
+            <div id="content">
+              <h1 class="mt-4">Utilisateurs</h1>
+              <div class="card">
+                <p-table 
+                  #dt
+                  [scrollable]="true" 
+                  [style]="{width:'1040px'}"
+                  [value]="users" 
+                  [rows]="5"
+                  [paginator]="true"
+                  [globalFilterFields]="['login', 'role']"
+                  [rowHover]="true"
+                  dataKey="iduser"
+                  currentPageReportTemplate="Affichage de {first} à {last} parmi {totalRecords} utilisateurs."
+                  [showCurrentPageReport]="true"
+                >
+                  <ng-template pTemplate="header">
+                    <tr>
+                      <th pSortableColumn="login" style="min-width:10rem">Login <p-sortIcon field="login"></p-sortIcon></th>
+                      <th pSortableColumn="role" style="min-width:10rem">Rôle <p-sortIcon field="role"></p-sortIcon></th>
+                      <th></th>
+                    </tr>
+                  </ng-template>
+                  <ng-template pTemplate="body" let-user>
+                    <tr>
+                      <td>{{ user.login }}</td>
+                      <td>{{ userRolesMap[user.idUser!].nomRole }}</td>
+                                           <td>
+                        <button pButton pRipple icon="pi pi-trash" severity="danger" [rounded]="true" [text]="true"  
+                          (mouseover)="user.showTooltipCancel = true" (mouseout)="user.showTooltipCancel = false" 
+                          (click)="deleteUser(user)" [disabled]="!user">
+                        </button>  
+                        <button pButton icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="openEditDialog(user)"></button>
+
+                      </td>
+                    </tr>
+                  </ng-template>
+                  <ng-template pTemplate="summary">
+                    <div class="flex align-items-center justify-content-between">Au total, il y a {{ users ? users.length : 0 }} utilisateurs.</div>
+                  </ng-template>
+                </p-table>
+              </div>
+              <p-dialog header="Modifier le rôle de l'utilisateur" [(visible)]="editDialogVisible" [modal]="true" [style]="{width: '500px',height:'400px'}">
+                <div class="p-fluid">
+                  <div class="p-field">
+                    <label>Rôle</label>
+                    <p-dropdown 
+                      [options]="roles" 
+                      [(ngModel)]="selectedRole" 
+                      optionLabel="nomRole" 
+                      placeholder="Sélectionnez un rôle">
+                    </p-dropdown>
+                  </div>
+                </div>
+                <p-footer>
+                  <button pButton label="Annuler" icon="pi pi-times" class="p-button-text" (click)="hideEditDialog()"></button>
+                  <button pButton label="Sauvegarder" icon="pi pi-check" class="p-button-text" (click)="saveUserRole()"></button>
+                </p-footer>
+              </p-dialog>
+              
+              
+              <p-confirmDialog [style]="{ width: '450px' }"
+                acceptLabel="Oui"
+                rejectLabel="Non"
+                (accept)="selectedUser? deleteUser(selectedUser) : null"
+                (reject)="onRejectDelete()">
+              </p-confirmDialog>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+</div>

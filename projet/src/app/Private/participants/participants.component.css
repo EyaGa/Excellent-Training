@@ -1,0 +1,75 @@
+@import url(../dashboard/dashboard.component.css);
+td:nth-child(3), th:nth-child(3) {
+    max-width: 190px;
+    word-break: break-word;
+    white-space: normal;
+  }
+  td:nth-child(5), th:nth-child(5) {
+    max-width: 110px;
+    word-break: break-word;
+    white-space: normal;
+  }
+  td:nth-child(6), th:nth-child(6) {
+    max-width: 110px;
+    word-break: break-word;
+    white-space: normal;
+  }
+  td:nth-child(7), th:nth-child(7) {
+    max-width: 200px;
+    word-break: break-word;
+    white-space: normal;
+    justify-content: justify;
+  }
+
+  td:last-child, th:last-child{
+    max-width: 100px;
+    word-break: break-word;
+    white-space: normal;
+  }
+
+  th span.p-sortable-column-icon {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 5px;
+  }
+
+  ::ng-deep .custom-multiselect .p-multiselect {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  ::ng-deep .custom-multiselect .p-multiselect.p-focus {
+    box-shadow: 0 0 0 2px #fac7bf !important; /* Ta couleur personnalisée */
+    border-color: #fabab1 !important; /* Tu peux aussi changer ça */
+    box-shadow: 0 0 0 0.2rem #fac7bfcc;
+
+  }
+
+  ::ng-deep .p-dropdown .p-dropdown-label:focus,
+  ::ng-deep .p-dropdown .p-dropdown-trigger:focus ,
+  ::ng-deep.p-dropdown.p-component.p-inputwrapper.p-inputwrapper-filled :focus{
+    border-color: none !important;
+    box-shadow: none !important;
+  }
+  
+  ::ng-deep .p-dropdown .p-dropdown-trigger {
+    background-color: transparent !important;
+  }
+
+  ::ng-deep .custom-dropdown .p-dropdown{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  ::ng-deep .p-ripple.p-element.p-dropdown-item{
+     margin-left:-50px;
+  }
+  ::ng-deep .custom-dropdown .p-dropdown.p-focus {
+    box-shadow: 0 0 0 2px #fac7bf !important;
+    border-color: #fabab1 !important;
+  }
+  ::ng-deep .p-inputtext
+  {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;  }

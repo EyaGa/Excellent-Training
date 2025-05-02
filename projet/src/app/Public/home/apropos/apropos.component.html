@@ -1,0 +1,32 @@
+<app-headertwo *ngIf="router.url == '/apropos'"></app-headertwo>
+<div class="about_section layout_padding">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <h1 class="about_taital">A propos<span class="border_0"></span></h1>
+            <p class="about_text">Excellent Training est le centre de formation professionnelle de Green Building. Nous nous engageons à accompagner 
+               l'évolution de nos équipes en leur proposant des formations adaptées aux besoins métiers, favorisant ainsi
+               leur montée en compétences et leur réussite professionnelle.
+ 
+            </p>
+         </div>
+      </div>
+      <div class="about_section_2">
+         <div class="row">
+            <div class="col-md-6">
+               <div class="about_img"><img src="assets\images\Fichier2.png"></div>
+            </div>
+            <div class="col-md-6">
+               <p class="about_text_1">Notre mission chez Excellent Training dépasse la simple organisation de formations. 
+                  Nous aspirons à offrir à nos équipes une expérience d'apprentissage continue, adaptée aux évolutions du
+                   marché et aux objectifs stratégiques de Green Building. 
+                  Grâce à notre plateforme de gestion de formation, nous facilitons l'accès aux parcours de développement 
+                  et assurons un suivi personnalisé des compétences de chacun.
+               </p>
+               <div class="readmore_bt"><a routerLink="/apropos">Voir plus</a></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<app-footer *ngIf="router.url == '/apropos'"></app-footer>
